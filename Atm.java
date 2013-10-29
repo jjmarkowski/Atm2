@@ -18,7 +18,7 @@ public class Atm {
 		Account alice = new Account("Alice", 3333, 250.0);
 		Account jt = new Account("jt", 0001, 999999999);
 		int userInput;
-		boolean x = true;
+		boolean x;
 		String userName = "";
 
 		Scanner reader = new Scanner(System.in);
@@ -26,9 +26,10 @@ public class Atm {
 		while(!userName.equals("Quite")) {
 
 			System.out.print("--Login--\nName: ");
-			userName = reader.nextLine();
+			userName = reader.next();
 			System.out.print("Pin: ");
 			int userPin = reader.nextInt();
+			x = true;
 
 			if (bob.login(userName, userPin)) {
 				while (x) {
